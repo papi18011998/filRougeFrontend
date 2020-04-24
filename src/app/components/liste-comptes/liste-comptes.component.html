@@ -1,0 +1,21 @@
+<app-dashboard>
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Numéro de compte</th>
+        <th>Date de création du compte</th>
+        <th>Solde compte</th>
+        <th>Faire un depot</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let compte of comptes">
+        <td >{{ compte.numeroCompte }}</td>
+        <td>{{ compte.createdAt |date: 'EEEE d MMMM y'}}</td>
+        <td>{{ compte.solde}}</td>
+        <td><button [routerLink]="['/depot', compte.id]" value="{{compte.id}}" class="btn btn-success">Faire un depot</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </app-dashboard>

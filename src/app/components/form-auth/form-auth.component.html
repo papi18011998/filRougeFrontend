@@ -1,0 +1,23 @@
+<div class="loginDiv col-md-6">
+  <div class="alert alert-danger col-md-12" style="text-align: center;" *ngIf="badCredentials">{{badCredentials}}</div>
+    <form [formGroup]="formConnexion" (submit)="verify()">
+            <div >
+              <mat-form-field appearance="legacy" class="col-md-12">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="donner votre email" type="email" formControlName="username" required>
+                <mat-icon matSuffix color="primary">account_circle</mat-icon>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="legacy" class="col-md-12">
+                <mat-label>Mot de passe</mat-label>
+                <input matInput placeholder="donner votre mot de passe" type="password" formControlName="password" required>
+                <mat-icon matSuffix color="primary">lock_open</mat-icon>
+              </mat-form-field>
+            </div>
+              <div style="text-align: center;">
+                <button type="submit" mat-raised-button color="primary" [disabled]="formConnexion.invalid">Se connecter</button>
+              </div>
+          <mat-progress-bar mode="indeterminate" *ngIf="showProgress"></mat-progress-bar>
+  </form>
+</div>

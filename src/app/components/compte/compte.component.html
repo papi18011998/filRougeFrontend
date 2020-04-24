@@ -1,0 +1,54 @@
+<app-dashboard>
+  <!-- <div *ngIf="successOrErrorAccount">{{successOrErrorAccount}} </div> -->
+  <form [formGroup]="addCompteForm" (submit)="addNewCompte()">
+    <div class="col-md-12 globalContainer">
+      <h2>Informations necessaires pour l'ajout d'un nouveau compte</h2>
+      <div class="topDiv">
+        <h2>Informations du patenaire</h2>
+        <mat-form-field appearance="legacy" class="col-md-6">
+          <mat-label>Ninea</mat-label>
+          <input matInput placeholder="donner votre ninea" type="text" formControlName="ninea" [(ngModel)]="ninea" (change)="getNineaUser()" required>
+          <mat-icon matSuffix color="primary">web_asset</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="legacy" class="col-md-6">
+          <mat-label>Régistre de commerce(RC)</mat-label>
+          <input matInput placeholder="donner votre rc" type="text" value="{{rc}}" formControlName="rc" required>
+          <mat-icon matSuffix color="primary">work</mat-icon>
+        </mat-form-field>  
+        <mat-form-field appearance="legacy" class="col-md-6">
+          <mat-label>Prénom</mat-label>
+          <input matInput placeholder="donner votre prénom" type="text" value="{{prenom}}" formControlName="prenom" required>
+          <mat-icon matSuffix color="primary">perm_identity</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="legacy" class="col-md-6">
+          <mat-label>Nom</mat-label>
+          <input matInput placeholder="donner votre prenom"  value="{{nom}}" type="text" formControlName="nom" required>
+          <mat-icon matSuffix color="primary">perm_identity</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="legacy" class="col-md-6">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="donner votre email" value="{{email}}" type="text"  formControlName="email" required>
+          <mat-icon matSuffix color="primary">email</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="legacy" class="col-md-6">
+          <mat-label>Numero de téléphone</mat-label>
+          <input matInput placeholder="donner votre téléphone" type="text"  value="{{tel}}" formControlName="tel"  required>
+          <mat-icon matSuffix color="primary">phone_enabled</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="bottomDiv">
+        <h2>Informations du compte</h2>
+        <mat-form-field appearance="legacy" class="col-md-12">
+          <mat-label>Montant à déposer</mat-label>
+          <input matInput placeholder="Préciser le montant à déposer" type="number" formControlName="solde" min="500000" class="depot"   required>
+          <mat-icon matSuffix color="primary">call_to_action</mat-icon>
+        </mat-form-field>
+        <div class="col-md-12 test">
+          <button type="submit" mat-raised-button color="primary" class="col-md-5" >Créer le partenaire</button>
+          <div class="col-md-2 test"></div>
+          <button type="reset" mat-raised-button color="warn" class="col-md-5" >Vider les champs</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</app-dashboard>

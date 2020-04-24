@@ -1,0 +1,27 @@
+<app-dashboard>
+
+  <table class="table">
+    <thead>
+        <tr>
+            <th>N°</th>
+            <th>Prenom</th>
+            <th>Nom</th>
+            <th>Numéro de téléphone</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Statut</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td >{{ user.id }}</td>
+            <td>{{ user.prenom}}</td>
+            <td>{{ user.nom}}</td>
+            <td>{{user.tel}}</td>
+            <td>{{ user.email}}</td>
+            <td>{{ user.libelle}}</td>
+            <td><button [class]="user.is_active == 1 ?'btn btn-danger':'btn btn-success'">{{ user.is_active == 1?"Désactiver":"Activer"}}</button></td>
+        </tr>
+    </tbody>
+</table>
+</app-dashboard>

@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+    margin: 0;
+    background-color: #3fb1e5;
+}
+h2{
+  text-align: center;
+  text-decoration: underline;
+  font-family: "Lucida Console";
+}
+input[type='number']{
+  appearance: textfield;
+}
+

@@ -1,0 +1,26 @@
+<div class="example-sidenav-content">
+  <button type="button" mat-button (click)="drawer.toggle()" color="primary" class="btn" title="Afficher ou cacher le menu lateral">
+    &equiv;
+  </button>
+</div>
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <div class="divImage"><img  class="arrondiImage" src="../../../assets/fond.jpg" alt="photo de profil" ></div>
+      <br>
+      <div style="text-align: center" >{{connectedUser.prenom}} {{connectedUser.nom}}</div>
+      <button mat-button [matMenuTriggerFor]="menu"><mat-icon>group</mat-icon>Gestion des utilisateurs<mat-icon>chevron_right</mat-icon></button>
+      <mat-menu #menu="matMenu">
+          <li> <a [routerLink]="['/addNewUser']"><mat-icon>account_box</mat-icon>Ajouter un nouvel utilisateur</a></li>
+          <li> <a [routerLink]="['/listUsers']"><mat-icon>group</mat-icon>Liste des utilisateurs</a></li>
+      </mat-menu>
+      <br>
+      <button  mat-button [matMenuTriggerFor]="menu2"><mat-icon>group</mat-icon>Gestion des comptes<mat-icon>chevron_right</mat-icon></button>
+      <mat-menu #menu2>
+        <li> <a [routerLink]="['/comptes']"><mat-icon>account_box</mat-icon>Ajouter un nouveau compte</a></li>
+        <li> <a [routerLink]="['/listComptes']"><mat-icon>group</mat-icon>Liste des comptes</a></li>
+      </mat-menu>
+      <br>
+      <button mat-raised-button color="warn" class="col-md-12"><mat-icon>power_settings_new</mat-icon> Se deconnecter</button>
+    </mat-drawer>
+    <ng-content></ng-content>
+  </mat-drawer-container>
